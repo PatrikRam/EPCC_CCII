@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+bool areFactors(int numeros[100], int tamv, int n){
+	int c=0;
+	for(int i=0; i<tamv; i++){
+    	cout<<i+1<<": Digite un numero: ";
+    	cin>>numeros[i];
+    	if (numeros[i]%n==0 or n%numeros[i]==0){
+    		c++;
+		}
+	}
+	if (c==tamv){
+		return true;
+	}else{
+		return false;
+	}
+}
+int main(){
+	int numeros[100],tamv, n;
+	
+	cout<<"Ingrese un numero: ";cin>>n;
+   	cout<<"Cantidad de numeros del arreglo: ";
+    cin>>tamv;
+    
+	if(areFactors(numeros, tamv, n)==1){
+		cout<<"Todos son divisibles";
+	}else{
+		cout<<"No todos son divisibles";
+	}
+    
+   
+    
+    	
+  }
