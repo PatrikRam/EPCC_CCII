@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+void convertir(int);
+int main(){	
+	
+	int num;
+	cout<<"Numero a convertir: ";cin>>num;
+	cout<<"En binario es: ";
+	convertir(num);
+}
+void convertir(int num){
+	if(num<2){
+		cout<<num;
+	}else{
+		convertir(num/2);
+		cout<<num%2;
+	}
+}
