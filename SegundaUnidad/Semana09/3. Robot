@@ -1,0 +1,39 @@
+#include <string>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+class Robot{
+	private:
+		double largo, ancho;
+	public:
+
+		void Variablesran(int);
+		void Numerosran(int);
+};
+
+void Robot::Variablesran(int a){
+	string palabra = "";
+	int longitud;
+	srand(time(NULL));
+	
+	for(int i=0; i<3; i++){
+		palabra += 97+rand()%(122-97+a);
+	}
+	cout<<palabra;
+}
+void Robot::Numerosran(int a){
+	srand(time(0));
+	cout<<a+(rand()%999);
+}
+
+int main(){
+	Robot r1;
+	for (int i=0; i<11; i++){
+	cout<<"El robot numero "<<i+1<<" se llamara: ";	
+	r1.Variablesran(i);
+	r1.Numerosran(i);
+	cout<<endl;
+	}
+}
