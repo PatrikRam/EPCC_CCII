@@ -1,0 +1,62 @@
+#include <string>
+#include <iostream>
+#include<sstream>
+using namespace std;
+
+class Diamante{
+	private:
+		char letra;
+		int altura;
+	public:
+		void dibujar(char, int);
+		
+};
+
+void Diamante::dibujar(char c, int n){
+	for(int i = 0;i<n/2+1;i++){
+        for(int j = n/2-i;j >= 0;j--){
+            if(j!=0)
+               cout<<" ";
+            if(i == 0&&j == 0){
+                printf("%c\n",c);
+                c++;
+            }
+            else if(j == 0){
+                printf("%c",c);
+                for(int k = 0;k < 2*i-1;k++){
+                    cout<<" ";
+                }
+                printf("%c\n",c);
+                c++;
+            }
+        }
+    }
+    c = c-2;
+    int k = 2;
+    for(int i = n/2;i >= 1;i--){
+        for(int j = 1;j < k;j++){
+            cout<<" ";
+        }
+        if(i == 1){
+            printf("%c",c--);
+            break;
+        }
+        printf("%c",c);
+        for(int l = 2*i-3;l>=1;l--){
+            cout<<" ";
+        }
+        printf("%c\n",c--);
+        k++;
+}
+}
+
+int main(){
+	Diamante d1;
+	d1.dibujar('A', 1);
+	cout<<endl;
+	d1.dibujar('A', 5);
+	cout<<endl;
+	d1.dibujar('A', 8);
+	
+		
+}
