@@ -1,0 +1,78 @@
+#include<iostream>
+using namespace std;
+
+
+class simRobot{
+private:
+    int x, y;
+    string direccion;
+public:
+    void setx(int);
+    void sety(int);
+    double getx();
+    double gety();
+
+    void dir(string, int, int);
+    void mostrar();
+};
+
+void simRobot::setx(int _x)
+{
+    x=_x;
+}
+void simRobot::sety(int _y)
+{
+    y=_y;
+}
+double simRobot::getx()
+{
+    return x;
+}
+double simRobot::gety()
+{
+    return y;
+}
+
+void simRobot::dir(string direccion, int x, int y){
+	
+	if (direccion=="D"){
+		x=x+1;
+		direccion="Derecha";
+		cout<<"Se movio a la derecha"<<endl;
+		cout<<direccion;
+		cout<<"Dir x: "<<x<<endl;
+		cout<<"Dir y: "<<y<<endl;
+	}else if (direccion=="I"){
+		y=y+1;
+		direccion="Izquierda";
+		cout<<"Se movio a la izquierda"<<endl;	
+		cout<<"Dir x: "<<x<<endl;
+		cout<<"Dir y: "<<y<<endl;
+	}else if (direccion=="A"){
+		cout<<"Avanzo"<<endl;
+	}
+	
+}
+
+void simRobot::mostrar()
+{
+	cout<<"Esta situado en el punto: ";
+    cout<<"("<<x<<","<<y<<")"<<endl;
+    cout<<"Su direccion es: "<<direccion;
+}
+
+
+int main()
+{
+    simRobot c1;
+    c1.setx(2);
+    c1.sety(3);
+    c1.mostrar();
+    c1.dir("D", 2, 3);
+    c1.dir("A", 2, 3);
+    c1.dir("A", 2, 3);
+    c1.dir("I", 2, 3);
+    c1.dir("A", 2, 3);
+    c1.dir("I", 2, 3);
+
+}
