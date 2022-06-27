@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std;
+
+class tiempo
+{
+	float h,m,s;
+	
+public:	
+	void leer();
+	
+	void imprime();
+	tiempo operator +(tiempo D){
+		tiempo aux;
+		aux.h = h+D.h;
+		aux.m = m+D.m;
+		aux.s = s+D.s;
+		
+		return aux;
+		
+	}
+	
+	tiempo operator -(tiempo D){
+		tiempo aux;
+		aux.h = h-D.h;
+		aux.m = m-D.m;
+		aux.s = s-D.s;
+		
+		return aux;
+		
+	}
+	
+	tiempo operator /(tiempo D){
+		tiempo aux;
+		if (aux.h == D.h and aux.m == D.m and aux.s == D.s){
+			cout<<"Valores iguales"<<endl;
+		}	
+		
+	}
+	tiempo operator >(tiempo D){
+		tiempo aux;
+		if (aux.h > D.h){
+			cout<<"Tiempo 1 es mayor"<<endl;
+		}else{
+			cout<<"Tiempo 2 es mayor"<<endl;
+		}	
+		
+	}
+	tiempo operator <(tiempo D){
+		tiempo aux;
+		if (aux.h < D.h){
+			cout<<"Tiempo 1 es menor"<<endl;
+		}else{
+			cout<<"Tiempo 2 es mayor"<<endl;
+		}	
+		
+	}
+};
+
+void tiempo::leer(){
+	cout<<"Hora:  ";cin>>h;
+	cout<<"Minutos:  ";cin>>m;
+	cout<<"Segundos:  ";cin>>s;
+	
+	if (m>60){
+		m=m-60;
+		h=h+1;
+	}
+	if (s>60){
+		s=s-60;
+		m=m+1;
+	}
+	
+}
+
+void tiempo::imprime(){
+	if (h>=12){
+	cout<<"Son las: "<<h<<"horas con "<<m<<"minutos y "<<s<<"segundos PM"<<endl;
+	}
+	else if (h<12){
+	cout<<"Son las: "<<h<<"horas con "<<m<<"minutos y "<<s<<"segundos AM"<<endl;
+	}
+}
+
+int main(){
+	tiempo A, B, C;
+	A.leer();
+	B.leer();
+	
+	C= A+B;
+	C.imprime();
+	C= A-B;
+	C.imprime();
+	
+}
