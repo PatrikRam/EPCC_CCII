@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+class cuadratico
+{
+	int a=0,b=0,c=0, x;
+	
+public:	
+	void leer();
+	cuadratico(int);
+	cuadratico(const cuadratico &otro);
+	void imprime();
+	
+};
+
+cuadratico::cuadratico(int _x)
+{
+    x=_x; 
+	cout<<"Constructor normal"<<endl; 
+}
+
+cuadratico::cuadratico(const cuadratico &otro){
+	x = otro.x;
+	cout<<"Constructor copia"<<endl;
+}
+
+void cuadratico::leer(){
+	cout<<"x:  ";cin>>x;
+		
+}
+
+void cuadratico::imprime(){
+	cout<<"f(x)= a"<<x*x<<" + b"<<x<<" + c";
+}
+
+int main(){
+	cuadratico a=2;
+	cuadratico b=a;	
+	a.imprime();
+		
+}
