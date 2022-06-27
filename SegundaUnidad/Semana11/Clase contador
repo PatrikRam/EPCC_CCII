@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+class Contador
+{
+private:
+	int c=0;
+	
+public:
+	
+	void mostrar();
+	Contador operator+(int c)
+	{	
+	Contador aux;
+	aux.c= aux.c+c;
+	return aux;
+	}
+	
+	Contador operator*(int c)
+	{	
+	Contador aux;
+	return aux;
+	aux.c= aux.c+c;
+	
+	}
+
+};
+
+void Contador::mostrar(){
+	cout<<"El contador tiene un valor de: "<<c<<endl;
+}
+
+
+int main(){
+	Contador c,a;
+	c.mostrar();
+	a=c+1;
+	a.mostrar();
+	a=c*1;
+	a.mostrar();
+}
